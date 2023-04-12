@@ -1,0 +1,27 @@
+.skillsLayout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  .skillsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-right: 3rem;
+    color: #FFF;
+
+    .skill {
+      grid-column: 2;
+
+      h3 {
+        text-transform: lowercase;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+        font-family: "Apoc Revelations", serif;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+

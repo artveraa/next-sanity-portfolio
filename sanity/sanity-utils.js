@@ -57,3 +57,34 @@ export async function getPage(slug) {
         {slug}
     )
 }
+
+export async function getHomeBanner() {
+    return createClient(clientConfig).fetch(
+        groq`*[_type == "homeBanner"][0] {
+            _id,
+            _createdAt,
+            nom,
+            prenom,
+            introduction,
+            job1,
+            job2,
+            "backgroundImage": backgroundImage.asset->url,
+        }`
+    )
+}
+
+export async function getSkills() {
+    return createClient(clientConfig).fetch(
+        groq`*[_type == "skills"][0] {
+            _id,
+            _createdAt,
+            introduction,
+            "skills": skills[] {
+                _key,
+                _type,
+                title,
+                description,
+            }
+        }`
+    )
+}

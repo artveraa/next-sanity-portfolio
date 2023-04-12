@@ -1,0 +1,48 @@
+.navbar {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  padding: 1.5rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+
+  .logo {
+    a {
+      color: #FFF;
+      text-decoration: none;
+    }
+  }
+
+  .menuIcon {
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    .dot {
+      width: 4px;
+      height: 4px;
+      background-color: #fff;
+      border-radius: 50%;
+      align-self: center;
+      justify-self: center;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      .dot {
+        &:nth-child(1),
+        &:nth-child(3),
+        &:nth-child(7),
+        &:nth-child(9) {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

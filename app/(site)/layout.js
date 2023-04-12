@@ -1,6 +1,7 @@
 import '../globals.scss'
 import Link from "next/link";
 import {getPages} from "@/sanity/sanity-utils";
+import NavBar from "@/app/(site)/components/NavBar";
 
 export const metadata = {
     title: 'Next + Sanity',
@@ -10,21 +11,10 @@ export const metadata = {
 
 export default async function RootLayout({children}) {
 
-    const pages = await getPages();
     return (
         <html lang="en">
         <body>
-        <header>
-            <Link href="/">Home</Link>
-            <>
-                {pages.map((page) => (
-                    <Link href={`/${page.slug}`} key={page._id}>
-                        {page.title}
-                    </Link>
-                ))}
-            </>
-
-        </header>
+        <NavBar/>
 
         <main>{children}</main>
 

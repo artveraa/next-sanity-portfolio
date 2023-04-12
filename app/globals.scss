@@ -1,0 +1,99 @@
+
+:root {
+}
+
+$font-base: 'Mona Sans', sans-serif;
+$font-alt: 'NewYork', serif;
+
+@font-face {
+  font-family: 'Dahlia';
+  src: url('../public/fonts/Dahlia-Medium.woff2') format('woff2'),
+  url('../public/fonts/Dahlia-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NewYork';
+  font-style: normal;
+  font-weight: 400;
+  src: local('NewYork'), local('NewYork'), url('../public/fonts/NewYork.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Mona Sans';
+  src: url('../public/fonts/Mona-Sans.woff2') format('woff2 supports variations'),
+  url('../public/fonts/Mona-Sans.woff2') format('woff2-variations');
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+
+@font-face {
+  font-family: 'Oroban Elegans';
+  src: url('../public/fonts/OrobanElegans-Medium.woff2') format('woff2'),
+  url('../public/fonts/OrobanElegans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Apoc Revelations';
+  src: url('../public/fonts/Apoc-Revelations-Variable[wght].woff2') format('woff2'),
+  url('../public/fonts/Apoc-Revelations-Variable[wght].woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-size: clamp(14px, 1.5vw, 18px);
+  font-family: $font-base;
+  font-variation-settings: 'wght' 100, 'wdth' 100;
+}
+
+h2 {
+  font-size: 1rem;
+  color: #FFFFFF;
+  padding: 0 3rem 3rem 3rem;
+  font-family: "Mona Sans", sans-serif;
+  position: relative;
+  font-variation-settings: 'wght' 100, 'wdth' 100;
+  text-transform: uppercase;
+  max-width: 50%;
+
+
+  //&::after {
+  //  content: '';
+  //  position: absolute;
+  //  top: .9em;
+  //  left: 0;
+  //  width: 9rem;
+  //  height: 1px;
+  //  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+  //  z-index: -1;
+  //}
+}
+
+body {
+  background: #000;
+}
+
+section + section {
+  margin-top: 10rem;
+}
+
+section {
+  &:last-of-type {
+    margin-bottom: 10rem;
+  }
+}
